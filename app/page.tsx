@@ -1,95 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
+    <>
+      <div className="container">
+        <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/"
+            className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+            logo
           </a>
-        </div>
+
+          <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li>
+              <a href="#" className="nav-link px-2 link-secondary">
+                Нүүр
+              </a>
+            </li>
+            <li>
+              <a href="#" className="nav-link px-2 link-dark">
+                Бидний тухай
+              </a>
+            </li>
+            <li>
+              <a href="#" className="nav-link px-2 link-dark">
+                Бүтээгдэхүүн
+              </a>
+            </li>
+            <li>
+              <a href="#" className="nav-link px-2 link-dark">
+                Мэдээ мэдээлэл
+              </a>
+            </li>
+            <li>
+              <a href="#" className="nav-link px-2 link-dark">
+                Холбоо барих
+              </a>
+            </li>
+          </ul>
+
+          <div className="col-md-3 text-end">
+            <button type="button" className="btn btn-outline-primary me-2">
+              Нэвтрэх
+            </button>
+            <button type="button" className="btn btn-primary">
+              Бүртгүүлэх
+            </button>
+          </div>
+        </header>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }

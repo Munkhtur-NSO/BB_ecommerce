@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  console.log("pathname->", pathname);
+
   return (
     <div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -36,8 +36,8 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="/products"
-              className={`nav-link px-2 link-dark ${pathname === "/products" ? "active" : ""}`}
+              href="/product"
+              className={`nav-link px-2 link-dark ${pathname === "/product" ? "active" : ""}`}
             >
               Бүтээгдэхүүн
             </Link>

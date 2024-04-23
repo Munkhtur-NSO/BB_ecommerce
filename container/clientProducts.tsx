@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 
-export default function ClientProducts({ products }: any) {
+export default function ClientProducts(props: any) {
+  const { products } = props;
   console.log("products", products);
+  console.log("props", props);
   return (
     <>
       <div className="hero overlay inner-page bg-primary py-5">

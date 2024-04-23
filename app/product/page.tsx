@@ -1,9 +1,13 @@
 import ClientProducts from "@/container/clientProducts";
 import { getAllProducts } from "@/framework/product";
-
+// import { unstable_noStore as noStore } from "next/cache";
+//export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
+// export const revalidate = 0;
 const fetchData = async () => {
   let lists = [];
   try {
+    // noStore();
     lists = await getAllProducts();
   } catch (e) {
     if (e instanceof Error) {

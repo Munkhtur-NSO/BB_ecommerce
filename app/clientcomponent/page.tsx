@@ -1,10 +1,11 @@
-"use client";
+import ClientProducts from "@/components/clientcomponent/page";
 
-export default function Index() {
-  console.log("client component");
+export default async function Index() {
   return (
     <>
-      <div> client component</div>
+      <div>
+        <ClientProducts />
+      </div>
     </>
   );
 }

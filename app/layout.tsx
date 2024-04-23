@@ -3,6 +3,7 @@ import { Roboto_Condensed } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import BaseLayout from "@/components/baseLayout";
 import "@/public/css/style.css";
+import Providers from "@/utils/provider";
 
 const roboto = Roboto_Condensed({
   weight: ["400", "600", "700"],
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <BaseLayout>{children}</BaseLayout>
+        <Providers>
+          <BaseLayout>{children}</BaseLayout>
+        </Providers>
       </body>
     </html>
   );

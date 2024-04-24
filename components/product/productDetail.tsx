@@ -1,13 +1,13 @@
 "use client";
 
 import Quantity from "@/components/product/quantity";
-import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { getAddCart } from "@/utils/cart";
+import { useState } from "react";
 import { useCartDispatch } from "@/contexts/cart";
-import moment from "moment";
-import { getAddCart } from "@/framework/cart";
 import { toast } from "react-toastify";
+import moment from "moment";
 
 const displayToastDone = (message: string) => {
   toast.success(message, {
@@ -33,7 +33,7 @@ const displayToastError = (message: string) => {
   });
 };
 
-export default function ClientProductDetail({ id, product }: any) {
+const ProductDetail = ({ product }: any) => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const { setCart } = useCartDispatch();
@@ -73,6 +73,7 @@ export default function ClientProductDetail({ id, product }: any) {
           <div className="row" key={1}>
             <div className="col-md-5">
               <div className="main-img">
+                {/* eslint-disable-next-line react/jsx-no-undef */}
                 <Image
                   width={50}
                   height={50}
@@ -135,4 +136,6 @@ export default function ClientProductDetail({ id, product }: any) {
       </div>
     </>
   );
-}
+};
+
+export default ProductDetail;

@@ -5,6 +5,25 @@ const nextConfig = {
             fullUrl: true,
         },
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'fakestoreapi.com',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'fakestoreapi.com',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'fakestoreapi.com',
+                port: '',
+            },
+        ],
+    },
 };
 
 export default nextConfig;

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto_Condensed } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import BaseLayout from "@/components/baseLayout";
+import "@/public/css/bootstrap.min.css";
 import "@/public/css/style.css";
 import Providers from "@/utils/provider";
+import ImportBsJS from "@/utils/importBsJS";
 
-const roboto = Roboto_Condensed({
-  weight: ["400", "600", "700"],
+const openSans = Open_Sans({
+  weight: ["400", "600"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -23,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <ImportBsJS />
+      <body className={openSans.className}>
         <Providers>
           <BaseLayout>{children}</BaseLayout>
         </Providers>

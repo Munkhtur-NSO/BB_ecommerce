@@ -3,6 +3,9 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import Cart from "@/components/layout/cart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const pathname = usePathname();
@@ -49,7 +52,7 @@ export default function Header() {
             data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse"
           >
-            <span className="fa fa-bars text-primary"></span>
+            <FontAwesomeIcon icon={faBars} className="text-primary" />
           </button>
           <div
             className="collapse navbar-collapse bg-white"
@@ -79,6 +82,7 @@ export default function Header() {
                   href="#"
                   className="nav-link dropdown-toggle"
                   data-bs-toggle="dropdown"
+                  data-bs-target="#navbarCollapse"
                 >
                   Бусад
                 </Link>
@@ -110,24 +114,11 @@ export default function Header() {
                 data-bs-toggle="modal"
                 data-bs-target="#searchModal"
               >
-                <i className="fas fa-search text-primary"></i>
+                <FontAwesomeIcon icon={faSearch} className="text-primary" />
               </button>
-              <Link href="#" className="position-relative me-4 my-auto">
-                <i className="fa fa-shopping-bag fa-2x"></i>
-                <span
-                  className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                  style={{
-                    top: "-5px",
-                    left: "15px",
-                    height: "20px",
-                    minWidth: "20px",
-                  }}
-                >
-                  3
-                </span>
-              </Link>
+              <Cart />
               <Link href="#" className="my-auto">
-                <i className="fas fa-user fa-2x"></i>
+                <FontAwesomeIcon icon={faUser} size="2x" />
               </Link>
             </div>
           </div>

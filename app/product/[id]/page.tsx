@@ -1,5 +1,6 @@
 import { getAllProducts, getSingleProduct } from "@/framework/product";
 import ClientProductDetail from "@/container/clientProductDetail";
+import ProductDetail from "@/components/product/productDetail";
 
 const fetchData = async (id: any) => {
   let product = [];
@@ -18,5 +19,5 @@ const fetchData = async (id: any) => {
 
 export default async function Page({ params }: { params: { id: string } }) {
   const product = await fetchData(params.id);
-  return <ClientProductDetail id={params.id} product={product} />;
+  return <ProductDetail id={params.id} product={product} />;
 }

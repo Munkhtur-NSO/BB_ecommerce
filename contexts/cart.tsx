@@ -42,6 +42,7 @@ const initialState: CartState = {
 const reducer = (state: CartState, action: Action): CartState => {
   switch (action.type) {
     case SET_CART:
+      console.log("action55", action?.payload);
       const totalQuantity = action.payload?.reduce(
         (total: any, product: any) => {
           return total + product.quantity;

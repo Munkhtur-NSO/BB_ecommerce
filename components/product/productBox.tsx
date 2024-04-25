@@ -39,10 +39,13 @@ const ProductBox: React.FC<Props> = (props) => {
           <p>{product?.description.substr(0, 50)}</p>
           <div className="d-flex justify-content-between flex-lg-wrap">
             <p className="text-dark fs-5 fw-bold mb-0">{product?.price}</p>
-            <button className="btn border border-secondary rounded-pill px-3 text-primary">
+            <Link
+              href={`/product/${product?.id}`}
+              className="btn border border-secondary rounded-pill px-3 text-primary"
+            >
               <i className="fa fa-shopping-bag me-2 text-primary"></i>{" "}
               Дэлгэрэнгүй
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 const Quantity = ({ onChange }: any) => {
   const [quantity, setQuantity] = useState(1);
+
   const removeClick = () => {
-    setQuantity(quantity - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   };
   const addClick = () => {
-    setQuantity(quantity + 1);
+    if (quantity < 99) {
+      setQuantity(quantity + 1);
+    }
   };
-
   const handleQuantity = (e: any) => {
     const val = Number(e.target.value);
-
-    if (Number.isInteger(val) && val >= 0) {
-      setQuantity(Number(e.target.value));
+    if (Number.isInteger(val) && val >= 1 && val <= 99) {
+      setQuantity(val);
     }
   };
 
@@ -23,40 +28,35 @@ const Quantity = ({ onChange }: any) => {
 
   return (
     <div className="product-count d-flex align-items-start">
-      <p className="title">Ширхэг:</p>
       <div className="d-flex align-items-center flex-column">
         <form
           action=""
           className="d-flex align-items-center justify-content-center"
         >
-          <div className="input-group">
-            <div className="input-group-prepend" id="button-addon3">
+          <div className="input-group quantity mb-5" style={{ width: "100px" }}>
+            <div className="input-group-btn">
               <button
-                className="btn btn-darker"
-                type={`button`}
+                type={"button"}
+                className="btn btn-sm btn-minus rounded-circle bg-light border"
                 onClick={removeClick}
                 disabled={quantity <= 1}
               >
-                <i className="sk sk-minus" />
+                <FontAwesomeIcon icon={faMinus} />
               </button>
             </div>
             <input
-              type="number"
-              max={99}
-              min={1}
-              className="form-control new-form-control"
-              placeholder=""
+              type="text"
+              className="form-control form-control-sm text-center border-0"
               value={quantity}
               onChange={handleQuantity}
             />
-
-            <div className="input-group-append">
+            <div className="input-group-btn">
               <button
-                className="btn btn-darker"
                 type={"button"}
+                className="btn btn-sm btn-plus rounded-circle bg-light border"
                 onClick={addClick}
               >
-                <i className="sk sk-plus" />
+                <FontAwesomeIcon icon={faPlus} />
               </button>
             </div>
           </div>

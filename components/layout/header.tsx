@@ -6,9 +6,11 @@ import { usePathname } from "next/navigation";
 import Cart from "@/components/layout/cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Header() {
+export default function Header({ lng }: any) {
   const pathname = usePathname();
+  const { t } = useTranslation(lng, "header", "");
 
   return (
     <div className="container-fluid fixed-top">
@@ -63,19 +65,19 @@ export default function Header() {
                 href="/"
                 className={`nav-item nav-link ${pathname === "/" ? "active" : ""}`}
               >
-                Нүүр
+                {t("menu_home")}
               </Link>
               <Link
                 href="/shop"
                 className={`nav-item nav-link ${pathname === "/shop" ? "active" : ""}`}
               >
-                Дэлгүүр
+                {t("menu_news")}
               </Link>
               <Link
                 href="/about"
                 className={`nav-item nav-link ${pathname === "/about" ? "active" : ""}`}
               >
-                Бидний тухай
+                {t("menu_about")}
               </Link>
               <div className="nav-item dropdown">
                 <Link
@@ -84,7 +86,7 @@ export default function Header() {
                   data-bs-toggle="dropdown"
                   data-bs-target="#navbarCollapse"
                 >
-                  Бусад
+                  {t("menu_other")}
                 </Link>
                 <div className="dropdown-menu m-0 bg-secondary rounded-0">
                   <Link href="/clientcomponent" className="dropdown-item">
@@ -105,8 +107,28 @@ export default function Header() {
                 href="/contact"
                 className={`nav-item nav-link ${pathname === "/contact" ? "active" : ""}`}
               >
-                Холбоо барих
+                {t("menu_contact")}
               </Link>
+              <ul className="nav nav-pills">
+                <li className="nav-item">
+                  <Link
+                    href={`/mn`}
+                    className={`${pathname === "/mn" ? "active text-white" : ""} nav-link `}
+                    aria-current="page"
+                  >
+                    Mongol
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    href="/en"
+                    className={`${pathname === "/en" ? "active text-white" : ""} nav-link `}
+                    aria-current="page"
+                  >
+                    English
+                  </Link>
+                </li>
+              </ul>
             </div>
             <div className="d-flex m-3 me-0">
               <button

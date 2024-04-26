@@ -10,7 +10,8 @@ import { toast } from "react-toastify";
 import moment from "moment";
 import ProductFeatured from "@/components/product/productFeatured";
 import ProductRelated from "@/components/product/productRelated";
-
+import Cookie from "js-cookie";
+import { useParams } from "next/navigation";
 const displayToastDone = (message: string) => {
   toast.success(message, {
     position: "top-right",
@@ -36,6 +37,9 @@ const displayToastError = (message: string) => {
 };
 
 const ProductDetail = ({ product }: any) => {
+  const locale = Cookie.get("i18next") || "mn";
+  const params = useParams();
+  console.log("params", params?.lng);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const { setCart } = useCartDispatch();

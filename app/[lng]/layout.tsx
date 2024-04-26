@@ -20,15 +20,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { lng },
 }: Readonly<{
   children: React.ReactNode;
+  params: { lng: string };
 }>) {
   return (
     <html lang="en">
       <ImportBsJS />
       <body className={openSans.className}>
         <Providers>
-          <BaseLayout>{children}</BaseLayout>
+          <BaseLayout lng={lng}>{children}</BaseLayout>
         </Providers>
       </body>
     </html>

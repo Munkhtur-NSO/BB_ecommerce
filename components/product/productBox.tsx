@@ -9,7 +9,6 @@ interface Props {
 const ProductBox: React.FC<Props> = (props) => {
   const { productDetail } = props;
   const product = productDetail;
-  console.log("product", product);
   return (
     <div className={"col"}>
       <div className="rounded position-relative fruite-item">

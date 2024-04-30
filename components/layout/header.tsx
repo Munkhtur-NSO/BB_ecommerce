@@ -7,11 +7,16 @@ import Cart from "@/components/layout/cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "@/app/i18n/client";
+import Cookie from "js-cookie";
+import { signOut, useSession } from "next-auth/react";
 
 export default function Header({ lng }: any) {
   const pathname = usePathname();
   const { t } = useTranslation(lng, "header", "");
-
+  const login = Cookie.get("bloomza_token");
+  const { data: session, status } = useSession();
+  console.log("session", session);
+  console.log("status", status);
   return (
     <div className="container-fluid fixed-top">
       <div className="container topbar bg-primary d-none d-lg-block">
@@ -139,9 +144,18 @@ export default function Header({ lng }: any) {
                 <FontAwesomeIcon icon={faSearch} className="text-primary" />
               </button>
               <Cart />
-              <Link href="#" className="my-auto">
-                <FontAwesomeIcon icon={faUser} size="2x" />
-              </Link>
+              {login ? (
+                <Link href="/profile" className="my-auto">
+                  <FontAwesomeIcon icon={faUser} size="2x" />
+                </Link>
+              ) : (
+                <Link href="/login" className="my-auto">
+                  <FontAwesomeIcon icon={faUser} size="2x" />
+                </Link>
+              )}
+              <button onClick={() => signOut()} className="btn btn-primary">
+                Гарах
+              </button>
             </div>
           </div>
         </nav>

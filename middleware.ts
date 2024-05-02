@@ -8,8 +8,15 @@ export const config = {
   // matcher: '/:lng*'
   matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
 };
-
+const PUBLIC_FILE = /\.(.*)$/;
 export function middleware(req: NextRequest) {
+  if (
+    req.nextUrl.pathname.startsWith("/_next") ||
+    PUBLIC_FILE.test(req.nextUrl.pathname)
+  ) {
+    return;
+  }
+
   if (
     req.nextUrl.pathname.indexOf("icon") > -1 ||
     req.nextUrl.pathname.indexOf("chrome") > -1

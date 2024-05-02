@@ -8,7 +8,7 @@ export default function Section4() {
               <a href="#">
                 <div className="service-item bg-secondary rounded border border-secondary">
                   <img
-                    src="/img/featur-1.jpg"
+                    src="/images/featur-1.jpg"
                     className="img-fluid rounded-top w-100"
                     alt=""
                   />
@@ -25,7 +25,7 @@ export default function Section4() {
               <a href="#">
                 <div className="service-item bg-dark rounded border border-dark">
                   <img
-                    src="/img/featur-2.jpg"
+                    src="/images/featur-2.jpg"
                     className="img-fluid rounded-top w-100"
                     alt=""
                   />
@@ -42,7 +42,7 @@ export default function Section4() {
               <a href="#">
                 <div className="service-item bg-primary rounded border border-primary">
                   <img
-                    src="img/featur-3.jpg"
+                    src="/images/featur-3.jpg"
                     className="img-fluid rounded-top w-100"
                     alt=""
                   />

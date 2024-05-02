@@ -11,9 +11,11 @@ export default function BaseLayout({
 }>) {
   return (
     <div>
-      <Header lng={lng} />
-      {children}
-      <Footer />
+      <>
+        <Header lng={lng} />
+        {children}
+        <Footer />
+      </>
     </div>
   );
 }

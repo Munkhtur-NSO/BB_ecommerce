@@ -12,6 +12,7 @@ import ProductFeatured from "@/components/product/productFeatured";
 import ProductRelated from "@/components/product/productRelated";
 import Cookie from "js-cookie";
 import { useParams } from "next/navigation";
+import { useModal } from "@/contexts/mapModalContext";
 const displayToastDone = (message: string) => {
   toast.success(message, {
     position: "top-right",
@@ -72,6 +73,9 @@ const ProductDetail = ({ product }: any) => {
   const quantityChange = (quantity: any) => {
     setQuantity(quantity);
   };
+
+  // @ts-ignore
+  const { openModal } = useModal();
   return (
     <>
       <div className="container-fluid py-5 mt-5">
@@ -116,6 +120,14 @@ const ProductDetail = ({ product }: any) => {
                   >
                     {loading && <>Уншиж байна...</>}
                     Сагслах
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-main "
+                    onClick={() => openModal("testModal", { product })}
+                  >
+                    Modal
                   </button>
                 </div>
                 <div className="col-lg-12">
@@ -211,7 +223,7 @@ const ProductDetail = ({ product }: any) => {
                     >
                       <div className="d-flex">
                         <img
-                          src="/img/avatar.jpg"
+                          src="/images/avatar.jpg"
                           className="img-fluid rounded-circle p-3"
                           style={{ width: "100px", height: "100px" }}
                           alt=""
@@ -238,7 +250,7 @@ const ProductDetail = ({ product }: any) => {
                       </div>
                       <div className="d-flex">
                         <img
-                          src="/img/avatar.jpg"
+                          src="/images/avatar.jpg"
                           className="img-fluid rounded-circle p-3"
                           style={{ width: "100px", height: "100px" }}
                           alt=""

@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Zoom from "react-medium-image-zoom";
+import { useModal } from "@/contexts/mapModalContext";
 
 export default function ClientProducts(props: any) {
   const { products } = props;
   console.log("products", products);
   console.log("props", props);
+  // @ts-ignore
+  const { openModal } = useModal();
   return (
     <>
       <div className="hero overlay inner-page bg-primary py-5">
@@ -34,17 +38,35 @@ export default function ClientProducts(props: any) {
                         href={`/product/${product?.id}`}
                         className="img-link me-4"
                       >
-                        <img
-                          src={product?.image}
-                          alt="Image"
-                          className="img-fluid"
-                        />
+                        <Zoom>
+                          <div
+                            aria-label="That Wanaka Tree, New Zealand by Laura Smetsers"
+                            role="img"
+                            style={{
+                              backgroundColor: "#fff",
+                              backgroundImage: `url(${product?.image})`,
+                              backgroundPosition: "50%",
+                              backgroundRepeat: "no-repeat",
+                              backgroundSize: "cover",
+                              height: "0",
+                              paddingBottom: "56%",
+                              width: "100%",
+                            }}
+                          />
+                          {/*<img*/}
+                          {/*  src={product?.image}*/}
+                          {/*  alt="Image"*/}
+                          {/*  // className="img-fluid"*/}
+                          {/*  width={220}*/}
+                          {/*/>*/}
+                        </Zoom>
                       </Link>
                       <div>
                         <span className="date">
                           <>{product?.price}</>{" "}
                           <Link href="#">{product?.category}</Link>
                         </span>
+
                         <h2>
                           <Link href={`/product/${product?.id}`}>
                             {product?.title}

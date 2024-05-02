@@ -123,7 +123,11 @@ export default function ProductSideBar() {
             className="rounded me-4"
             style={{ width: "100px", height: "100px" }}
           >
-            <img src="img/featur-1.jpg" className="img-fluid rounded" alt="" />
+            <img
+              src="/images/featur-1.jpg"
+              className="img-fluid rounded"
+              alt=""
+            />
           </div>
           <div>
             <h6 className="mb-2">Big Banana</h6>
@@ -147,7 +151,11 @@ export default function ProductSideBar() {
             className="rounded me-4"
             style={{ width: "100px", height: "100px" }}
           >
-            <img src="img/featur-2.jpg" className="img-fluid rounded" alt="" />
+            <img
+              src="/images/featur-2.jpg"
+              className="img-fluid rounded"
+              alt=""
+            />
           </div>
           <div>
             <h6 className="mb-2">Big Banana</h6>
@@ -171,7 +179,11 @@ export default function ProductSideBar() {
             className="rounded me-4"
             style={{ width: "100px", height: "100px" }}
           >
-            <img src="img/featur-3.jpg" className="img-fluid rounded" alt="" />
+            <img
+              src="/images/featur-3.jpg"
+              className="img-fluid rounded"
+              alt=""
+            />
           </div>
           <div>
             <h6 className="mb-2">Big Banana</h6>
@@ -202,7 +214,7 @@ export default function ProductSideBar() {
       <div className="col-lg-12">
         <div className="position-relative">
           <img
-            src="img/banner-fruits.jpg"
+            src="/images/banner-fruits.jpg"
             className="img-fluid w-100 rounded"
             alt=""
           />

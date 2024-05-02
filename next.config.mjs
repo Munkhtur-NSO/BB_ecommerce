@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
     logging: {
         fetches: {
             fullUrl: true,
         },
+    },
+    experimental: {
+        optimizePackageImports: ["react-bootstrap"],
     },
     images: {
         remotePatterns: [
@@ -25,5 +29,6 @@ const nextConfig = {
         ],
     },
 };
+
 
 export default nextConfig;

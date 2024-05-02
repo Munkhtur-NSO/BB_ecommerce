@@ -109,7 +109,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-5.jpg"
+                              src="/images/fruite-item-5.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -145,7 +145,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-2.jpg"
+                              src="/images/fruite-item-2.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -189,7 +189,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-1.jpg"
+                              src="/images/fruite-item-1.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -225,7 +225,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-6.jpg"
+                              src="/images/fruite-item-6.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -269,7 +269,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-5.jpg"
+                              src="/images/fruite-item-5.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -305,7 +305,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-4.jpg"
+                              src="/images/fruite-item-4.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -349,7 +349,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-3.jpg"
+                              src="/images/fruite-item-3.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -385,7 +385,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-2.jpg"
+                              src="/images/fruite-item-2.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -421,7 +421,7 @@ export default function Section3() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-1.jpg"
+                              src="/images/fruite-item-1.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />

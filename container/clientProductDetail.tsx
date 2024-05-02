@@ -8,6 +8,7 @@ import { useCartDispatch } from "@/contexts/cart";
 import moment from "moment";
 import { getAddCart } from "@/framework/cart";
 import { toast } from "react-toastify";
+import { useModal } from "@/contexts/mapModalContext";
 
 const displayToastDone = (message: string) => {
   toast.success(message, {
@@ -38,6 +39,8 @@ export default function ClientProductDetail({ id, product }: any) {
   const [loading, setLoading] = useState(false);
   const { setCart } = useCartDispatch();
   const currentDate = moment().format("YYYY-MM-DD");
+  // @ts-ignore
+  const { openModal } = useModal();
   const addToCart = async () => {
     setLoading(true);
     let itemData = {};
@@ -87,6 +90,12 @@ export default function ClientProductDetail({ id, product }: any) {
                 <div className="category text-bold">
                   Category: {product?.category}
                 </div>
+                Modal
+                <button
+                  type="button"
+                  className="btn btnV3 btn-main bg-blur rounded-circle p-3 shadow mb-3"
+                  onClick={() => openModal("testModal")}
+                ></button>
                 <div className="product-title text-bold my-3">
                   {product?.title}
                 </div>

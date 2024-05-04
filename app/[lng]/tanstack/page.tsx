@@ -1,38 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getAllProducts, getProductCategory } from "@/framework/product";
-import ProductBox from "@/components/product/productBox";
+import { useQuery } from "@tanstack/react-query";
+import { getAllProducts } from "@/framework/product";
 import ProductSideBar from "@/components/product/productSideBar";
-import { useSearchParams } from "next/navigation";
+import ProductBox from "@/components/product/productBox";
 
 export default function Page() {
-  const search = useSearchParams();
-  const query = search.get("category");
-  const [products, setProducts] = useState<any>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        let productsData;
-        if (query) {
-          productsData = await getProductCategory(query);
-        } else {
-          productsData = await getAllProducts();
-        }
-        setProducts(productsData);
-      } catch (error) {
-        console.error("Failed to fetch products:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchProducts();
-  }, [query]);
+  // Queries
+  const query = useQuery({ queryKey: ["products"], queryFn: getAllProducts });
+  const products = query && query?.data;
   console.log(products);
-
   return (
     <>
       <div className="container-fluid fruite py-5">

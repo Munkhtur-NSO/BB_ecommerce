@@ -9,6 +9,7 @@ import { faUser, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "@/app/i18n/client";
 import Cookie from "js-cookie";
 import { signOut, useSession } from "next-auth/react";
+import { useModal } from "@/contexts/mapModalContext";
 
 export default function Header({ lng }: any) {
   const pathname = usePathname();
@@ -17,6 +18,7 @@ export default function Header({ lng }: any) {
   const { data: session, status } = useSession();
   console.log("session", session);
   console.log("status", status);
+  const { openModal } = useModal() as any;
 
   const [isClient, setIsClient] = useState(false);
 
@@ -159,7 +161,11 @@ export default function Header({ lng }: any) {
                       <FontAwesomeIcon icon={faUser} size="2x" />
                     </Link>
                   ) : (
-                    <Link href="/login" className="my-auto">
+                    <Link
+                      href="#"
+                      className="my-auto"
+                      onClick={() => openModal("Login")}
+                    >
                       <FontAwesomeIcon icon={faUser} size="2x" />
                     </Link>
                   )}

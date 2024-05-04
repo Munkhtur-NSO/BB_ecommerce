@@ -4,12 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import { getAllProducts } from "@/framework/product";
 import ProductSideBar from "@/components/product/productSideBar";
 import ProductBox from "@/components/product/productBox";
+import { useState } from "react";
 
 export default function Page() {
   // Queries
   const query = useQuery({ queryKey: ["products"], queryFn: getAllProducts });
   const products = query && query?.data;
   console.log(products);
+
   return (
     <>
       <div className="container-fluid fruite py-5">

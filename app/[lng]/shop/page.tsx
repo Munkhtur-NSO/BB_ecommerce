@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getAllProducts, getProductCategory } from "@/framework/product";
 import ProductBox from "@/components/product/productBox";
 import ProductSideBar from "@/components/product/productSideBar";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function Page() {
   const search = useSearchParams();
@@ -41,20 +41,6 @@ export default function Page() {
           <div className="row g-4">
             <div className="col-lg-12">
               <div className="row g-4">
-                <div className="col-xl-3">
-                  <div className="input-group w-100 mx-auto d-flex">
-                    <input
-                      type="search"
-                      className="form-control p-3"
-                      placeholder="keywords"
-                      aria-describedby="search-icon-1"
-                    />
-                    <span id="search-icon-1" className="input-group-text p-3">
-                      <i className="fa fa-search"></i>
-                    </span>
-                  </div>
-                </div>
-                <div className="col-6"></div>
                 <div className="col-xl-3">
                   <div className="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
                     <label htmlFor="fruits">Default Sorting:</label>

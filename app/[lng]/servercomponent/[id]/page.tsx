@@ -16,7 +16,7 @@ export default async function Index({
   return (
     <>
       <div> server component detail</div>
-      <ClientTest id={id} isFeatured={isFeatured} />
+      <ClientTest />
     </>
   );
 }

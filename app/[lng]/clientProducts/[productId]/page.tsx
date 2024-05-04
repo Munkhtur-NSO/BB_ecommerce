@@ -1,4 +1,4 @@
-import { getAllProducts, getSingleProduct } from "@/utils/products";
+import { getAllProducts, getSingleProduct } from "@/framework/product";
 
 import ProductDetail from "@/components/product/productDetail";
 type Props = {

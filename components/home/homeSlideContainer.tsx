@@ -27,7 +27,7 @@ const HomeSlider: React.FC = () => {
           <SwiperSlide>
             <Link href={"/"} className="d-block">
               <img
-                src={"http://localhost:3000/images/cart-page-header-img.jpg"}
+                src={"/images/cart-page-header-img.jpg"}
                 alt="slide"
                 className="w-100  img-cover"
                 // height={390}

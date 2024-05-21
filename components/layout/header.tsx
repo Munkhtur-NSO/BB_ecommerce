@@ -63,7 +63,7 @@ export default function Header({ lng }: any) {
           <div className="container px-0">
             <nav className="navbar navbar-light bg-white navbar-expand-xl">
               <Link href="/" className="navbar-brand">
-                <h1 className="text-primary display-6">Bloomza</h1>
+                <h1 className="text-primary display-6">Your Web LOGO</h1>
               </Link>
               <button
                 className="navbar-toggler py-2 px-3"
